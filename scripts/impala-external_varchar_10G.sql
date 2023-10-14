@@ -6,7 +6,7 @@
 create schema if not exists tpcds_10000_text;
 use tpcds_10000_text;
 
-create external table call_center (
+create external table if not exists  call_center (
   cc_call_center_sk int,
   cc_call_center_id varchar(16),
   cc_rec_start_date varchar(10),
@@ -45,7 +45,7 @@ location '/user/cma_creator/tpcds/10G/call_center'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table catalog_page (
+create external table if not exists  catalog_page (
   cp_catalog_page_sk int,
   cp_catalog_page_id varchar(16),
   cp_start_date_sk int,
@@ -62,7 +62,7 @@ location '/user/cma_creator/tpcds/10G/catalog_page'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table catalog_returns (
+create external table if not exists  catalog_returns (
   cr_returned_date_sk int,
   cr_returned_time_sk int,
   cr_item_sk int,
@@ -97,7 +97,7 @@ location '/user/cma_creator/tpcds/10G/catalog_returns'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table catalog_sales (
+create external table if not exists  catalog_sales (
   cs_sold_date_sk int,
   cs_sold_time_sk int,
   cs_ship_date_sk int,
@@ -139,7 +139,7 @@ location '/user/cma_creator/tpcds/10G/catalog_sales'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table customer (
+create external table if not exists  customer (
   c_customer_sk int,
   c_customer_id varchar(16),
   c_current_cdemo_sk int,
@@ -165,7 +165,7 @@ location '/user/cma_creator/tpcds/10G/customer'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table customer_address (
+create external table if not exists  customer_address (
   ca_address_sk int,
   ca_address_id varchar(16),
   ca_street_number varchar(10),
@@ -186,7 +186,7 @@ location '/user/cma_creator/tpcds/10G/customer_address'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table customer_demographics (
+create external table if not exists  customer_demographics (
   cd_demo_sk int,
   cd_gender varchar(1),
   cd_marital_status varchar(1),
@@ -203,7 +203,7 @@ location '/user/cma_creator/tpcds/10G/customer_demographics'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table date_dim (
+create external table if not exists  date_dim (
   d_date_sk int,
   d_date_id varchar(16),
   d_date varchar(10),
@@ -239,7 +239,7 @@ location '/user/cma_creator/tpcds/10G/date_dim'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table household_demographics (
+create external table if not exists  household_demographics (
   hd_demo_sk int,
   hd_income_band_sk int,
   hd_buy_potential varchar(15),
@@ -252,7 +252,7 @@ location '/user/cma_creator/tpcds/10G/household_demographics'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table income_band (
+create external table if not exists  income_band (
   ib_income_band_sk int,
   ib_lower_bound int,
   ib_upper_bound int
@@ -263,7 +263,7 @@ location '/user/cma_creator/tpcds/10G/income_band'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table inventory (
+create external table if not exists  inventory (
   inv_date_sk int,
   inv_item_sk int,
   inv_warehouse_sk int,
@@ -275,7 +275,7 @@ location '/user/cma_creator/tpcds/10G/inventory'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table item (
+create external table if not exists  item (
   i_item_sk int,
   i_item_id varchar(16),
   i_rec_start_date varchar(10),
@@ -305,7 +305,7 @@ location '/user/cma_creator/tpcds/10G/item'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table promotion (
+create external table if not exists  promotion (
   p_promo_sk int,
   p_promo_id varchar(16),
   p_start_date_sk int,
@@ -332,7 +332,7 @@ location '/user/cma_creator/tpcds/10G/promotion'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table reason (
+create external table if not exists  reason (
   r_reason_sk int,
   r_reason_id varchar(16),
   r_reason_desc varchar(100)
@@ -343,7 +343,7 @@ location '/user/cma_creator/tpcds/10G/reason'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table ship_mode (
+create external table if not exists  ship_mode (
   sm_ship_mode_sk int,
   sm_ship_mode_id varchar(16),
   sm_type varchar(30),
@@ -357,7 +357,7 @@ location '/user/cma_creator/tpcds/10G/ship_mode'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table store (
+create external table if not exists  store (
   s_store_sk int,
   s_store_id varchar(16),
   s_rec_start_date varchar(10),
@@ -394,7 +394,7 @@ location '/user/cma_creator/tpcds/10G/store'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table store_returns (
+create external table if not exists  store_returns (
   sr_returned_date_sk int,
   sr_return_time_sk int,
   sr_item_sk int,
@@ -422,7 +422,7 @@ location '/user/cma_creator/tpcds/10G/store_returns'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table store_sales (
+create external table if not exists  store_sales (
   ss_sold_date_sk int,
   ss_sold_time_sk int,
   ss_item_sk int,
@@ -453,7 +453,7 @@ location '/user/cma_creator/tpcds/10G/store_sales'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table time_dim (
+create external table if not exists  time_dim (
   t_time_sk int,
   t_time_id varchar(16),
   t_time int,
@@ -471,7 +471,7 @@ location '/user/cma_creator/tpcds/10G/time_dim'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table warehouse (
+create external table if not exists  warehouse (
   w_warehouse_sk int,
   w_warehouse_id varchar(16),
   w_warehouse_name varchar(20),
@@ -493,7 +493,7 @@ location '/user/cma_creator/tpcds/10G/warehouse'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table web_page (
+create external table if not exists  web_page (
   wp_web_page_sk int,
   wp_web_page_id varchar(16),
   wp_rec_start_date varchar(10),
@@ -515,7 +515,7 @@ location '/user/cma_creator/tpcds/10G/web_page'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table web_returns (
+create external table if not exists  web_returns (
   wr_returned_date_sk int,
   wr_returned_time_sk int,
   wr_item_sk int,
@@ -547,7 +547,7 @@ location '/user/cma_creator/tpcds/10G/web_returns'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table web_sales (
+create external table if not exists  web_sales (
   ws_sold_date_sk int,
   ws_sold_time_sk int,
   ws_ship_date_sk int,
@@ -589,7 +589,7 @@ location '/user/cma_creator/tpcds/10G/web_sales'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table web_site (
+create external table if not exists  web_site (
   web_site_sk int,
   web_site_id varchar(16),
   web_rec_start_date varchar(10),

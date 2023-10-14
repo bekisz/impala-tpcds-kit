@@ -10,7 +10,7 @@ use tpcds_10000_parquet;
 -- unpartitioned tables
 --
 
-create table customer
+create  table if not exists  customer
 (
   c_customer_sk             integer,
   c_customer_id             varchar(16),
@@ -33,7 +33,7 @@ create table customer
 )
 stored as parquet;
 
-create table customer_address
+create  table if not exists  customer_address
 (
   ca_address_sk         integer,
   ca_address_id         varchar(16),
@@ -51,7 +51,7 @@ create table customer_address
 )
 stored as parquet;
 
-create table item
+create  table if not exists  item
 (
   i_item_sk         integer,
   i_item_id         varchar(16),
@@ -78,7 +78,7 @@ create table item
 )
 stored as parquet;
 
-create table call_center
+create  table if not exists  call_center
 (
   cc_call_center_sk int,
   cc_call_center_id varchar(16),
@@ -114,7 +114,7 @@ create table call_center
 )
 stored as parquet;
 
-create table catalog_page
+create  table if not exists  catalog_page
 (
   cp_catalog_page_sk int,
   cp_catalog_page_id varchar(16),
@@ -128,7 +128,7 @@ create table catalog_page
 )
 stored as parquet;
 
-create table customer_demographics
+create  table if not exists  customer_demographics
 (
   cd_demo_sk int,
   cd_gender varchar(1),
@@ -142,7 +142,7 @@ create table customer_demographics
 )
 stored as parquet;
 
-create table date_dim
+create  table if not exists  date_dim
 (
   d_date_sk int,
   d_date_id varchar(16),
@@ -175,7 +175,7 @@ create table date_dim
 )
 stored as parquet;
 
-create table household_demographics
+create  table if not exists  household_demographics
 (
   hd_demo_sk int,
   hd_income_band_sk int,
@@ -185,7 +185,7 @@ create table household_demographics
 )
 stored as parquet;
 
-create table income_band
+create  table if not exists  income_band
 (
   ib_income_band_sk int,
   ib_lower_bound int,
@@ -193,7 +193,7 @@ create table income_band
 )
 stored as parquet;
 
-create table promotion
+create  table if not exists  promotion
 (
   p_promo_sk int,
   p_promo_id varchar(16),
@@ -217,7 +217,7 @@ create table promotion
 )
 stored as parquet;
 
-create table reason
+create  table if not exists  reason
 (
   r_reason_sk int,
   r_reason_id varchar(16),
@@ -225,7 +225,7 @@ create table reason
 )
 stored as parquet;
 
-create table ship_mode
+create  table if not exists  ship_mode
 (
   sm_ship_mode_sk int,
   sm_ship_mode_id varchar(16),
@@ -236,7 +236,7 @@ create table ship_mode
 )
 stored as parquet;
 
-create table store
+create  table if not exists  store
 (
   s_store_sk int,
   s_store_id varchar(16),
@@ -270,7 +270,7 @@ create table store
 )
 stored as parquet;
 
-create table time_dim
+create  table if not exists  time_dim
 (
   t_time_sk int,
   t_time_id varchar(16),
@@ -285,7 +285,7 @@ create table time_dim
 )
 stored as parquet;
 
-create table warehouse
+create  table if not exists  warehouse
 (
   w_warehouse_sk int,
   w_warehouse_id varchar(16),
@@ -304,7 +304,7 @@ create table warehouse
 )
 stored as parquet;
 
-create table web_page
+create  table if not exists  web_page
 (
   wp_web_page_sk int,
   wp_web_page_id varchar(16),
@@ -323,7 +323,7 @@ create table web_page
 )
 stored as parquet;
 
-create table web_site
+create  table if not exists  web_site
 (
   web_site_sk int,
   web_site_id varchar(16),
@@ -358,7 +358,7 @@ stored as parquet;
 -- partitioned tables
 --
 
-create table inventory
+create  table if not exists  inventory
 (
   inv_item_sk                 integer,
   inv_warehouse_sk            integer,
@@ -367,7 +367,7 @@ create table inventory
 partitioned by (inv_date_sk integer)
 stored as parquet;
 
-create table store_sales
+create  table if not exists  store_sales
 (
   ss_sold_time_sk             integer,
   ss_item_sk                  integer,
@@ -395,7 +395,7 @@ create table store_sales
 partitioned by (ss_sold_date_sk integer)
 stored as parquet;
 
-create table store_returns
+create  table if not exists  store_returns
 (
   sr_return_time_sk         integer,
   sr_item_sk                integer,
@@ -420,7 +420,7 @@ create table store_returns
 partitioned by (sr_returned_date_sk integer)
 stored as parquet;
 
-create table catalog_returns
+create  table if not exists  catalog_returns
 (
   cr_returned_time_sk       integer,
   cr_item_sk                integer,
@@ -452,7 +452,7 @@ create table catalog_returns
 partitioned by (cr_returned_date_sk integer)
 stored as parquet;
 
-create table catalog_sales
+create  table if not exists  catalog_sales
 (
   cs_sold_time_sk           integer,
   cs_ship_date_sk           integer,
@@ -491,7 +491,7 @@ create table catalog_sales
 partitioned by (cs_sold_date_sk integer)
 stored as parquet;
 
-create table web_returns
+create  table if not exists  web_returns
 (
   wr_returned_time_sk       integer,
   wr_item_sk                integer,
@@ -520,7 +520,7 @@ create table web_returns
 partitioned by (wr_returned_date_sk integer)
 stored as parquet;
 
-create table web_sales
+create  table if not exists  web_sales
 (
   ws_sold_time_sk           integer,
   ws_ship_date_sk           integer,
