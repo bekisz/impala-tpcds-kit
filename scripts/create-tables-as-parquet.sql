@@ -1,10 +1,10 @@
 --
 -- adjust the schema name if necessary
--- currently (tpcds_10000_parquet)
+-- currently (tpcds_parquet)
 --
 
-create schema if not exists tpcds_10000_parquet;
-use tpcds_10000_parquet;
+create schema if not exists tpcds_parquet;
+use tpcds_parquet;
 
 --
 -- unpartitioned tables

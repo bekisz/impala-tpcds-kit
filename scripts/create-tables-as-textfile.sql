@@ -1,10 +1,10 @@
 --
 -- modify this file to contain the correct:
--- * schema name (currently tpcds_10000_text)
+-- * schema name (currently tpcds_text)
 -- * location path (currently /tmp/tpc-ds/sf10000)
 
-create schema if not exists tpcds_10000_text;
-use tpcds_10000_text;
+create schema if not exists tpcds_text;
+use tpcds_text;
 
 create external table if not exists  call_center (
   cc_call_center_sk int,
@@ -41,7 +41,7 @@ create external table if not exists  call_center (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/user/cma_creator/tpcds/10G/call_center'
+location '/user/cma_creator/tcpds/data/text/call_center'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -58,7 +58,7 @@ create external table if not exists  catalog_page (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/user/cma_creator/tpcds/10G/catalog_page'
+location '/user/cma_creator/tcpds/data/text/catalog_page'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -93,7 +93,7 @@ create external table if not exists  catalog_returns (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/user/cma_creator/tpcds/10G/catalog_returns'
+location '/user/cma_creator/tcpds/data/text/catalog_returns'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -135,7 +135,7 @@ create external table if not exists  catalog_sales (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/user/cma_creator/tpcds/10G/catalog_sales'
+location '/user/cma_creator/tcpds/data/text/catalog_sales'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -161,7 +161,7 @@ create external table if not exists  customer (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/user/cma_creator/tpcds/10G/customer'
+location '/user/cma_creator/tcpds/data/text/customer'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -182,7 +182,7 @@ create external table if not exists  customer_address (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/user/cma_creator/tpcds/10G/customer_address'
+location '/user/cma_creator/tcpds/data/text/customer_address'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -199,7 +199,7 @@ create external table if not exists  customer_demographics (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/user/cma_creator/tpcds/10G/customer_demographics'
+location '/user/cma_creator/tcpds/data/text/customer_demographics'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -235,7 +235,7 @@ create external table if not exists  date_dim (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/user/cma_creator/tpcds/10G/date_dim'
+location '/user/cma_creator/tcpds/data/text/date_dim'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -248,7 +248,7 @@ create external table if not exists  household_demographics (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/user/cma_creator/tpcds/10G/household_demographics'
+location '/user/cma_creator/tcpds/data/text/household_demographics'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -259,7 +259,7 @@ create external table if not exists  income_band (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/user/cma_creator/tpcds/10G/income_band'
+location '/user/cma_creator/tcpds/data/text/income_band'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -271,7 +271,7 @@ create external table if not exists  inventory (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/user/cma_creator/tpcds/10G/inventory'
+location '/user/cma_creator/tcpds/data/text/inventory'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -301,7 +301,7 @@ create external table if not exists  item (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/user/cma_creator/tpcds/10G/item'
+location '/user/cma_creator/tcpds/data/text/item'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -328,7 +328,7 @@ create external table if not exists  promotion (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/user/cma_creator/tpcds/10G/promotion'
+location '/user/cma_creator/tcpds/data/text/promotion'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -339,7 +339,7 @@ create external table if not exists  reason (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/user/cma_creator/tpcds/10G/reason'
+location '/user/cma_creator/tcpds/data/text/reason'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -353,7 +353,7 @@ create external table if not exists  ship_mode (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/user/cma_creator/tpcds/10G/ship_mode'
+location '/user/cma_creator/tcpds/data/text/ship_mode'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -390,7 +390,7 @@ create external table if not exists  store (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/user/cma_creator/tpcds/10G/store'
+location '/user/cma_creator/tcpds/data/text/store'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -418,7 +418,7 @@ create external table if not exists  store_returns (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/user/cma_creator/tpcds/10G/store_returns'
+location '/user/cma_creator/tcpds/data/text/store_returns'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -449,7 +449,7 @@ create external table if not exists  store_sales (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/user/cma_creator/tpcds/10G/store_sales'
+location '/user/cma_creator/tcpds/data/text/store_sales'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -467,7 +467,7 @@ create external table if not exists  time_dim (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/user/cma_creator/tpcds/10G/time_dim'
+location '/user/cma_creator/tcpds/data/text/time_dim'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -489,7 +489,7 @@ create external table if not exists  warehouse (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/user/cma_creator/tpcds/10G/warehouse'
+location '/user/cma_creator/tcpds/data/text/warehouse'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -511,7 +511,7 @@ create external table if not exists  web_page (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/user/cma_creator/tpcds/10G/web_page'
+location '/user/cma_creator/tcpds/data/text/web_page'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -543,7 +543,7 @@ create external table if not exists  web_returns (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/user/cma_creator/tpcds/10G/web_returns'
+location '/user/cma_creator/tcpds/data/text/web_returns'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -585,7 +585,7 @@ create external table if not exists  web_sales (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/user/cma_creator/tpcds/10G/web_sales'
+location '/user/cma_creator/tcpds/data/text/web_sales'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -619,7 +619,7 @@ create external table if not exists  web_site (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/user/cma_creator/tpcds/10G/web_site'
+location '/user/cma_creator/tcpds/data/text/web_site'
 tblproperties ('serialization.null.format'='')
 ;
 
