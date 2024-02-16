@@ -5,7 +5,7 @@
 --
 
 use tpcds_parquet;
-set SORT_RUN_BYTES_LIMIT=512mb;
+--- set SORT_RUN_BYTES_LIMIT=512mb;
 
 insert overwrite table call_center            select * from tpcds_text.call_center;
 insert overwrite table catalog_page           select * from tpcds_text.catalog_page;
@@ -23,7 +23,7 @@ insert overwrite table store                  select * from tpcds_text.store;
 insert overwrite table time_dim               select * from tpcds_text.time_dim;
 insert overwrite table warehouse              select * from tpcds_text.warehouse;
 insert overwrite table web_page               select * from tpcds_text.web_page;
-insert overwrite table web_site               select * from tpcds_text.web_site;
+insert overwrite table web  _site               select * from tpcds_text.web_site;
 
 
 insert overwrite table inventory
